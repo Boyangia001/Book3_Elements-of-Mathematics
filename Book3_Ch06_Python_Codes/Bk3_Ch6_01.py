@@ -43,6 +43,13 @@ def plot_surf(xx,yy,zz,caption):
         ax.set_zlim(zz.min(),zz.max())
 
     plt.tight_layout()
+    #Sometimes Jupyterlab reports: SyntaxWarning: invalid escape sequence '\i' for the following there lines,
+    #A possible solution to this error:
+    ## Directly correct syntax for italic labels 
+    ## since Matplotlib automatically interprets text enclosed by $ as LaTeX math mode and renders letters in italics.
+    # ax.set_xlabel('$x$')  
+    # ax.set_ylabel('$y$')
+    # ax.set_zlabel('$z$') 
     ax.set_xlabel('$\it{x}$')
     ax.set_ylabel('$\it{y}$')
     ax.set_zlabel('$\it{z}$')
